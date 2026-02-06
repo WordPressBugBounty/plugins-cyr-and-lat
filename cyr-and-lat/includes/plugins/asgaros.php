@@ -1,14 +1,13 @@
 <?php
 /**
- * Plugin integration Advanced custom fields
- * Our integration uses the translation of already created slugs of forums and topics.
+ * Advanced Custom Fields integration - Translates existing forum and topic slugs.
  *
  * @author Webcraftic <wordpress.webraftic@gmail.com>
  * @copyright (c) 11.12.2018, Webcraftic
  * @version 1.0
  */
 
-defined( 'ABSPATH' ) || die( 'Cheatin&#8217; uh?' );
+defined( 'ABSPATH' ) || die( 'Direct access not allowed.' );
 
 /**
  * Convert Asgaros forum and topic slugs

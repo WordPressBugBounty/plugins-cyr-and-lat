@@ -7,7 +7,7 @@
  * @version 1.0
  */
 
-defined( 'ABSPATH' ) || die( 'Cheatin&#8217; uh?' );
+defined( 'ABSPATH' ) || die( 'Direct access not allowed.' );
 
 if ( ! function_exists( 'wbcr_ctlr_sanitize_title' ) ) {
 	/**
@@ -46,7 +46,7 @@ if ( ! function_exists( 'wbcr_ctlr_sanitize_title' ) ) {
 			}
 		}
 		
-		$term = $is_term ? $wpdb->get_var( $wpdb->prepare( "SELECT slug FROM {$wpdb->terms} WHERE name = '%s'", $title ) ) : '';
+		$term = $is_term ? $wpdb->get_var( $wpdb->prepare( "SELECT slug FROM {$wpdb->terms} WHERE name = %s", $title ) ) : '';
 		
 		if ( empty( $term ) ) {
 			$title = wbcr_ctlr_transliterate( $title );

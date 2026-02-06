@@ -7,7 +7,7 @@
  * @version 1.0
  */
 
-defined( 'ABSPATH' ) || die( 'Cheatin&#8217; uh?' );
+defined( 'ABSPATH' ) || die( 'Direct access not allowed.' );
 
 require_once WCTLR_PLUGIN_DIR . '/includes/plugins/acf.php';
 require_once WCTLR_PLUGIN_DIR . '/includes/plugins/asgaros.php';

@@ -1,80 +1,59 @@
-﻿=== Cyr to Lat reloaded – transliteration of links and file names===
-Contributors: webcraftic
-Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=VDX7JNTQPNPFW
-Tags: cyr-to-lat, cyr to lat, rus to lat, cyrillic, latin, l10n, russian, rustolat, slugs, translations, transliteration, media, georgian, european, diacritics, muiltilanguage
+=== Cyr to Lat Reloaded - Transliteration of Links and File Names ===
+Contributors: themeisle
+Tags: cyrillic to latin, cyr to lat, rus to lat, cyrillic, transliteration
 Requires at least: 4.2
-Tested up to: 5.0
+Tested up to: 6.9
 Requires PHP: 5.2
-Stable tag: trunk
+Stable tag: 1.3.1
 License: GPLv2
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Plugin converts Cyrillic, Georgian and Greek links and file names to Latin characters. This is essential for the accurate WordPress plugin operations, and visibly improves the readability of links.
+Converts Cyrillic, Georgian, and Greek URLs and file names into readable Latin characters.
 
 == Description ==
 
-Cyr to lat reloaded is the improved version of the popular Cyr to lat plugin, created by Sergei Biriukov, and Rus-To-Lat plugin designed by Anton Skorobogatov. Even though the plugin is still easy & simple, we have updated both the symbol base and the source code, and fixed known bugs.
+**Note:** This plugin is no longer being actively developed, and we recommend switching to [**Cyrlitera**](https://wordpress.org/plugins/cyrlitera/), a more advanced version with expanded features and customization options.
 
-What is transliteration? This term usually refers to the action aiming to convert symbols from one language to another. For example, when we change Cyrillic symbols to Latin. Since the majority of the Internet uses Latin symbols, all software is designed with full Latin support – not Cyrillic, Chinese or whatever. That is why whenever you assign Cyrillic names, you can end up with access problems in their absolute URLs. Besides, Cyrillic in links really deteriorates absolute URLs readability. And it this case you might need transliteration of links and file names.
+Transliteration is the process of converting characters from one writing system to another, such as converting Cyrillic symbols to Latin. Because most web software and URLs are designed around Latin characters, using Cyrillic or other non-Latin symbols in links or file names can lead to unreadable URLs, accessibility issues, and even broken links. Transliteration ensures your URLs and file names remain clean, readable, and compatible across all platforms.
 
-We have created a simple transliteration plugin named Cyr to lat reloaded. It replaces Cyrillic, Georgian and Turkish symbols with Latins automatically and creates readable absolute URLs for posts, sections, marks, products and custom post types. In addition, this plugin fixes incorrect file names and removes extra symbols, which may cause access problems.
+This plugin automatically replaces Cyrillic, Georgian, Turkish, and other supported characters with Latin equivalents to create clean and readable URLs for posts, categories, taxonomies, products, and custom post types. It also fixes incorrect file names by removing unsafe characters and transliterating them during upload, helping prevent 404 errors and broken media links.
 
-**Here’s an example of Cyrillic URL:**
+### Examples
 
-http://webcraftic.com/%D0%BF%D1%80%D0%B8%D0%B2%D0%B5%D1%82-%D0%BC%D0%B8%D1%80
+**Cyrillic URL before transliteration:**
 
-**Now the same link, but transliterated to Latin:**
+`https://example.com/%D0%BF%D1%80%D0%B8%D0%B2%D0%B5%D1%82-%D0%BC%D0%B8%D1%80`
 
-http://webcraftic.com/privet-mir
+**Same URL transliterated to Latin:**
 
-Do you see the difference? The first one is encoded and recognized by browser only, when the second one with Latin symbols is shorter and much clearer.
+`https://example.com/privet-mir`
 
-**Incorrect file name of the image:**
+**Incorrect file names before transliteration:**
 
-%D0%BC%D0%BE%D0%B5_image_ 290.jpg
+`%D0%BC%D0%BE%D0%B5_image_290.jpg`
+`A+nice+picture.png`
 
-A+nice+picture.png
+**Readable transliterated file names:**
 
-**The example of image transliteration – readable name without special characters:**
+`moe_image_290.jpg`
+`a-nice-picture.png`
 
-moe_image_ 290.jpg
+By using Latin-based file names and URLs, you avoid issues with encoding, broken links, and unreadable paths. This plugin performs the transliteration automatically each time a file is uploaded, ensuring your media library stays clean and consistent.
 
-a-nice-picture.png
+### Features
 
-You can ignore all basic rules of creating file names, but one day you’ll definitely deal with bad links in images and 404 error in direct links to the files.
+- Automatically transliterates URLs for posts, pages, categories, tags, and custom post types
+- Preserves existing URL structure while making it readable
+- Transliterates attachment file names
+- Removes unsafe or problematic characters from file names
+- Supports Russian, Belarusian, Ukrainian, Bulgarian, Georgian, Greek, Armenian, and Serbian character sets
+- Compatible with Advanced Custom Fields, Asgaros Forum, and BuddyPress
 
-We recommend naming files in Latin symbols. Cyr-to-lat reloaded plugin can do this for you automatically on each file loading. In this case, there will be no bad links.
+### Advanced Transliteration Features
 
-**FEATURES**
+If you need more advanced transliteration features, consider upgrading to [Cyrlitera](https://wordpress.org/plugins/cyrlitera/).
 
-* Converts absolute URLs of existing posts, pages, sections and tags automatically (after plugin activation);
-* Preserves absolute URLs integrity;
-* Transliterates file names in attachments;
-* Performs transliteration of attachment file names.
-* Supports Russian, Belarusian, Ukrainian, Bulgarian, Georgian, Greek, Armenian, Serbian symbols
-* Support plugin Advanced custom fields
-* Support plugin Asgaros
-* Support plugin Buddypress
-
-#### EXTENDED VERSION OF THE PLUGIN WITH CONTROL PANEL ####
-* [Cyrlitera – transliteration of links and file names](https://wordpress.org/plugins/cyrlitera/)
-* [Clearfy – WordPress optimization plugin and disable ultimate tweaker](https://wordpress.org/plugins/clearfy/)
-
-**THANKS TO THE PLUGIN DEVELOPERS**
-
-We’ve used some features of the following plugins:
-
-Cyrlitera, WP Translitera, Rus-To-Lat, Cyr-To-Lat, Clearfy — WordPress optimization plugin, translit-it, Cyr to Lat enhanced, Cyr-And-Lat, Rus filename translit, rus to lat advanced
-
-#### NEED SUPPORT, WE GOT YOU COVERED ####
-We provide free support for this plugin. If you are pushed with a problem, just create a new ticket. We will definitely help you!
-
-1. **[Get starting free support](https://clearfy.pro/support/?utm_source=wordpress.org&utm_campaign=wbcr_clearfy&utm_content=repo_description)**
-4. **[Hot support](https://clearfy.pro/hot-support/?utm_source=wordpress.org&utm_campaign=wbcr_clearfy&utm_content=repo_description)** - Any user can contact us. You can use it only if you find a php error in plugin, get a white screen, or want to report a vulnerability.
-
-#### ADDITIONAL RESOURCES ####
-1. **[Youtube channel](https://www.youtube.com/channel/UCxOg4XzLe5kX1bP2YP4TTfQ)**
-2. **[Telegram](https://t.me/webcraftic)**
+Unlike Cyr to Lat Reloaded, Cyrlitera offers a user-friendly interface that gives you full control over how links are transliterated. It also allows you to roll back converted URLs, create automatic redirects from old URLs to new ones, and help eliminate broken links across your site.
 
 == Screenshots ==
 
@@ -83,36 +62,53 @@ We provide free support for this plugin. If you are pushed with a problem, just 
 
 == Installation ==
 
-1. Upload `cyrandlat` folder to the `/wp-content/plugins/` directory.
-2. Activate the plugin through the 'Plugins' menu in WordPress.
-3. Make sure your system has iconv set up right, or iconv is not installed at all. If you have any problems (trimmed slugs, strange characters, question marks) - please ask for support.
+1. In your WordPress admin, go to **Plugins > Add New**
+2. In the Search field, type **"Cyr to Lat Reloaded"**
+3. Under "Cyr to Lat Reloaded" by Themeisle, click the **Install Now** link
+4. Once the process is complete, click the **Activate Plugin** link
+
+You're done! No configuration is needed.
 
 == Frequently Asked Questions ==
 
-= How can I define my own substitutions? =
+= Can I define my own transliteration rules? =
 
-Add this code to your theme's `functions.php` file:
-`
-function my_cyr_and_lat_table($cal_table) {
-   $cal_table['Ъ'] = 'U';
-   $cal_table['ъ'] = 'u';
-   return $cal_table;
-}
-add_filter('wbcr_ctl_default_symbols_pack', 'my_cyr_and_lat_table');
-`
-= Does this plugin support multisites? =
+This plugin uses a fixed set of transliteration rules. If you need custom character mappings or support for additional languages, we recommend using [Cyrlitera](https://wordpress.org/plugins/cyrlitera/), which allows you to define your own substitutions with full flexibility.
 
-Unfortunately, the answer is no. It’s temporary, as we are trying to add this support in some of the future versions.
+= Does this plugin work on multisite installations? =
 
-= How to restore converted slugs? =
+Not at this time. The plugin works only on single-site installations.
 
-You can roll back the changes you have made, using the extended version of  [Cyrlitera plugin](https://wordpress.org/plugins/cyrlitera/ "Cyrlitera plugin").
+= How do I redirect old URLs to their new transliterated versions? =
 
-= How can I redirect users from old links to new ones? =
+This plugin does not create redirects. If you need automatic redirects for transliterated URLs, we recommend switching to [Cyrlitera](https://wordpress.org/plugins/cyrlitera/), which includes built-in redirect handling for all updated slugs.
 
-You can do this by installing the extended version of [Cyrlitera plugin](https://wordpress.org/plugins/cyrlitera/ "Cyrlitera plugin")
+= Does this plugin modify links in comments, menus, or theme files? =
+
+No. Only WordPress-generated slugs (URLs) and attachment file names are affected. Other hard-coded links remain as they are.
+
+= Will this plugin change the text inside my posts? =
+
+No. Only URLs (slugs) and file names are transliterated. The content inside your posts or pages remains unchanged.
 
 == Changelog ==
+
+#####   Version 1.3.1 (2026-01-13)
+
+- We are retiring Cyr to Lat reloaded in favor of Cyrlitera plugin to ensure users have access to existing features plus additional capabilities
+- Enhanced security
+
+
+
+
+####   Version 1.3.0 (2025-11-06)
+
+Cyr to Lat plugin has been acquired by Themeisle :tada:
+We’re happy to announce that Themeisle is now the new owner of Cyr to Lat. This acquisition will help ensure the plugin’s continued development, better support, and exciting new updates in the future.
+Your existing setup will continue to work as usual — no action is required on your part.
+
+
+
 = 1.2.0 =
 * Added: Compatible with Wordpress 5.0
 * Added: Gutenberg support

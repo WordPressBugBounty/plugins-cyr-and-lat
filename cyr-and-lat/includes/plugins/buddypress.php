@@ -8,7 +8,7 @@
  * @version 1.0
  */
 
-defined( 'ABSPATH' ) || die( 'Cheatin&#8217; uh?' );
+defined( 'ABSPATH' ) || die( 'Direct access not allowed.' );
 
 /**
  * Convert BuddyPress group slug (slug maybe urlencoded)

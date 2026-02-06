@@ -7,7 +7,7 @@
  * @subpackage Admin Notices
  */
 
-defined( 'ABSPATH' ) || die( 'Cheatin&#8217; uh?' );
+defined( 'ABSPATH' ) || die( 'Direct access not allowed.' );
 
 class WCTLR_Admin_Notices {
 	
@@ -78,47 +78,22 @@ class WCTLR_Admin_Notices {
 		// Prefix from namespace constant
 		$this->prefix = 'wbcr_cyrandlat_an_';;
 		$convert_exists_slugs_url = wp_nonce_url( add_query_arg( 'wctlr_convert_existing_slugs', '' ), 'convert_exising_slugs' );
-		
-		if ( in_array( get_locale(), array( 'ru_RU', 'bel', 'kk', 'uk', 'bg', 'bg_BG', 'ka_GE' ) ) ) {
-			$this->suggestions_message = '<b style="font-size: 16px;">%plugin% Внимание:</b><br> <b style="color:orangered;">Вы хотите преобразовать старые записи, рубрики, метки в латиницу? Нажмите <a href="' . esc_url( $convert_exists_slugs_url ) . '" class="button button-default">преобразовать</a>, чтобы завершить процесс установки!</b><br>';
-			$this->suggestions_message .= 'Если что-то пошло не так, вы можете сделать откат преобразованных ссылок с помощью плагина <a href="https://ru.wordpress.org/plugins/cyrlitera/" target="_blank">Cyrlitera</a> или связаться с нашей <a href="http://forum.webcraftic.com" target="_blank" rel="noopener">службой поддержки</a>, мы обязательно поможем вам. ';
-			$this->suggestions_message .= '<br><b>Мы также рекомендуем вам более продвинутые плагины транслитерации, смотрите видео в чем их различие:</b>';
-			
-			$this->suggestions = array(
-				'cyrlitera' => array(
-					'name'     => 'Cyrlitera - это расширенный плагин транслитерации',
-					'desc'     => 'В отличии от Cyr to lat reloaded, плагин Cyrlitera имеет удобный интерфейс для полного контроля преобразования ссылок, возможность отката преобразованных ссылок, возможность перенаправления со старых ссылок на новые, для устранения битых ссылок.',
-					'filename' => 'cyrlitera.php',
-				),
-				'clearfy'   => array(
-					'name'     => '<span>Clearfy - все инструменты оптимизации в одном плагине</span>',
-					'desc'     => 'Комплексный плагин оптимизации Wordpress, в который уже входят функции транслитерации. Мы рекомендуем вам использовать его, потому что он выполняет комплексную оптимизацию, улучшает SEO, улучшает защиту вашего сайта, ускоряет ваш сайт не заменяя популярные плагины оптимизации, а просто дополняя их.',
-					'filename' => 'clearfy.php',
-				)
-			);
-		} else {
+
 			//$this->suggestions_message = '<b>%plugin% Warning:</b><br>
 			//Your old slugs, posts and terms are automatically converted to Latin!
 			//If something went wrong or you did not know that this plugin works automatically, you can rollback the converted links using the <a href="https://wordpress.org/plugins/cyrlitera/" target="_blank">Cyrlitera</a> plugin.
 			//Cyr to lat reloaded is compatible with the Cyrlitera plugin, so using the <a href="https://wordpress.org/plugins/cyrlitera/" target="_blank">Cyrlitera</a> plugin you can roll back the Cyr to lat reloaded plugin. In any case, if something does not work out for you, please let us know about the problem on the <a href="https://wordpress.org/support/plugin/cyr-and-lat" target="_blank">support forum</a>, we will help you!';
 			
-			$this->suggestions_message = '<b style="font-size: 16px;">%plugin% Warning:</b><br> <b style="color:orangered;">Do you want to convert old post, tag, categories slugs to Latin? Click <a href="' . esc_url( $convert_exists_slugs_url ) . '" class="button button-default">convert </a>, to complete the installation process!</b><br>';
-			$this->suggestions_message .= 'If something went wrong, you can rollback converted slugs with the <a href="https://wordpress.org/plugins/cyrlitera/" target="_blank">Cyrlitera</a> plugin or contact with our <a href="http://forum.webcraftic.com" target="_blank" rel="noopener">support team</a>, we will definitely help you. ';
-			$this->suggestions_message .= '<br><b>We also recommend you more advanced transliteration plugins:</b>';
+			$this->suggestions_message = '<b style="color: #d63638;">Important: This plugin is retired.</b> We strongly recommend switching to <a href="https://wordpress.org/plugins/cyrlitera/" target="_blank">Cyrlitera</a> for ongoing support and features.<br>';
+			$this->suggestions_message .= 'If you still need to convert existing slugs using this plugin, click <a href="' . esc_url( $convert_exists_slugs_url ) . '" class="button button-default">Convert</a>.';
 			
 			$this->suggestions = array(
 				'cyrlitera' => array(
-					'name'     => 'Cyrlitera - plugin for transliteration with extended features',
-					'desc'     => 'Unlike Cyr to lat reloaded, the Cyrlitera plugin has a convenient interface for full control for tranliteration links, the ability to rollback converted links, the ability to redirect from old links to new ones, to eliminate broken links.',
+					'name'     => 'Cyrlitera - Advanced transliteration plugin with rollback, redirects, and link management',
+					'desc'     => 'Unlike Cyr to lat reloaded, Cyrlitera offers a convenient interface with full control over transliteration, link rollback, redirects, and broken link prevention.',
 					'filename' => 'cyrlitera.php',
 				),
-				'clearfy'   => array(
-					'name'     => '<span>Clearfy - base Wordpress optimization in one plugin</span>',
-					'desc'     => 'This is a free plugin to optimize Wordpress, it includes transliteration functions for links and file names. We recommend that you use it, because it performs complex optimization, improves SEO, improves securety of your site, speeds up your site without replacing the popular optimization plugins, but simply completing them. For example, you can extended YOAST SEO features at 30%, and speed optimization plug-ins by 15-20%! Clearfy will allow you to get rid of a large number of small plug-ins and reduce the load on your site. Try it, it\'s free!',
-					'filename' => 'clearfy.php',
-				)
 			);
-		}
 		
 		// Check notices
 		if ( is_admin() ) {
@@ -152,16 +127,16 @@ class WCTLR_Admin_Notices {
 			// Check AJAX submit
 			if ( defined( 'DOING_AJAX' ) && DOING_AJAX ) {
 				add_action( 'wp_ajax_' . $this->prefix . '_dismiss_suggestions', array(
-					&$this,
+					$this,
 					'dismiss_suggestions'
 				) );
 				// Admin area (except install or activate plugins page)
-			} elseif ( ! in_array( basename( $_SERVER['PHP_SELF'] ), array(
+			} elseif ( isset( $_SERVER['PHP_SELF'] ) && ! in_array( basename( $_SERVER['PHP_SELF'] ), array(
 				//'plugins.php',
 				'plugin-install.php',
 				'update.php'
 			) ) ) {
-				add_action( 'wp_loaded', array( &$this, 'load_notices_suggestions' ), PHP_INT_MAX );
+				add_action( 'wp_loaded', array( $this, 'load_notices_suggestions' ), PHP_INT_MAX );
 			}
 		}
 	}
@@ -181,8 +156,8 @@ class WCTLR_Admin_Notices {
 		// Collect missing plugins
 		$this->missing = $this->get_missing_plugins();
 		if ( ! empty( $this->missing ) && is_array( $this->missing ) ) {
-			add_action( 'admin_footer', array( &$this, 'admin_footer_suggestions' ) );
-			add_action( 'admin_notices', array( &$this, 'admin_notices_suggestions' ) );
+			add_action( 'admin_footer', array( $this, 'admin_footer_suggestions' ) );
+			add_action( 'admin_notices', array( $this, 'admin_notices_suggestions' ) );
 		}
 	}
 	
@@ -198,20 +173,18 @@ class WCTLR_Admin_Notices {
 		
 		?>
         <div class="<?php echo esc_attr( $this->prefix ); ?>-dismiss-suggestions notice notice-success is-dismissible" data-nonce="<?php echo esc_attr( wp_create_nonce( $this->prefix . '-dismiss-suggestions' ) ); ?>">
-            <p><?php echo str_replace( '%plugin%', $plugin_data['Name'], $this->suggestions_message ); ?></p>
-			<?php if ( $is_ru ): ?>
-                <a href="https://youtu.be/fNRWy-1aZmA" style="float:left;margin: 10px 15px 10px 0;" target="_blank" rel="noopener"><img src="<?= WCTLR_PLUGIN_URL; ?>/assets/img/ctr-reloaded-video_03.png" alt=""></a>
-			<?php endif; ?>
+            <p><?php echo str_replace( '%plugin%', esc_html( $plugin_data['Name'] ), $this->suggestions_message ); ?></p>
+
             <ul>
 				<?php foreach ( $this->missing as $plugin ) : ?>
-                    <li><strong><?php echo $this->suggestions[ $plugin ]['name']; ?></strong>
+                    <li><strong><?php echo esc_html( $this->suggestions[ $plugin ]['name'] ); ?></strong>
                         <a href="<?php echo esc_url( $this->get_install_url( $plugin ) ); ?>">
 							<?php if ( $is_ru ): ?>
                                 (Установить)
 							<?php else: ?>
-                                (Install)
+                                Install Now
 							<?php endif ?>
-                        </a><br/><?php echo $this->suggestions[ $plugin ]['desc']; ?></li>
+                        </a><br/><?php echo wp_kses_post( $this->suggestions[ $plugin ]['desc'] ); ?></li>
 				<?php endforeach; ?>
             </ul>
             <div style="clear:both;"></div>

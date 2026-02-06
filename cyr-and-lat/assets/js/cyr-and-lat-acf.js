@@ -23,7 +23,7 @@ jQuery(function($) {
 		console.log(val);
 		val = $.trim(val);
 		if( window.cyr_and_lat_dict === undefined ) {
-			console.error('Cyr-and-lat for ACF: lang dictionary not loaded!')
+			console.error('Cyr-and-lat for ACF: language dictionary not loaded!')
 			return val;
 		}
 		var table = window.cyr_and_lat_dict;

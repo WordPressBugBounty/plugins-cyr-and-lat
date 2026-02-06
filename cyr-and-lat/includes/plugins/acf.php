@@ -8,7 +8,7 @@
  * @version 1.0
  */
 
-defined( 'ABSPATH' ) || die( 'Cheatin&#8217; uh?' );
+defined( 'ABSPATH' ) || die( 'Direct access not allowed.' );
 
 function wbcr_ctlr_acf_scripts() {
 	global $pagenow;
@@ -17,7 +17,8 @@ function wbcr_ctlr_acf_scripts() {
 		require_once( ABSPATH . '/wp-admin/includes/plugin.php' );
 	}
 	
-	$on_acf_edit_page = 'post.php' === $pagenow && isset( $_GET['post'] ) && 'acf-field-group' === get_post_type( $_GET['post'] );
+	$post_id = isset( $_GET['post'] ) ? absint( $_GET['post'] ) : 0;
+	$on_acf_edit_page = 'post.php' === $pagenow && $post_id > 0 && 'acf-field-group' === get_post_type( $post_id );
 	if ( is_plugin_active( 'advanced-custom-fields/acf.php' ) and $on_acf_edit_page ) {
 		$data = "window.cyr_and_lat_dict = " . json_encode( wbcr_ctlr_get_symbols_pack() ) . ";";
 		
