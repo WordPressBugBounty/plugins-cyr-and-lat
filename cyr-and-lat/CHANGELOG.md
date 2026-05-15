@@ -1,3 +1,7 @@
+#####   Version 1.3.2 (2026-05-15)
+
+- Updated dependencies.
+
 #####   Version 1.3.1 (2026-01-13)
 
 - We are retiring Cyr to Lat reloaded in favor of Cyrlitera plugin to ensure users have access to existing features plus additional capabilities
