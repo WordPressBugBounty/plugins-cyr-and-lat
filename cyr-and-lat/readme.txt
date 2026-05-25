@@ -2,9 +2,9 @@
 Contributors: themeisle
 Tags: transliteration, cyrillic, slugs, greek, georgian
 Requires at least: 4.2
-Tested up to: 6.9
+Tested up to: 7.0
 Requires PHP: 5.2
-Stable tag: 1.3.2
+Stable tag: 1.3.3
 License: GPLv2
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -92,12 +92,20 @@ No. Only WordPress-generated slugs (URLs) and attachment file names are affected
 No. Only URLs (slugs) and file names are transliterated. The content inside your posts or pages remains unchanged.
 
 = How to report a security issue? =
- 
+
 Plugin security is a core priority for us. If you identify a potential vulnerability, we ask that you disclose it responsibly.
 
 Please follow the reporting protocols outlined on our [Security Page](https://themeisle.com/security/).
 
 == Changelog ==
+
+#####   Version 1.3.3 (2026-05-25)
+
+- Updated dependencies
+- Updated dependencies
+
+
+
 
 #####   Version 1.3.2 (2026-05-15)
 

@@ -5,7 +5,7 @@
 * Description: Converts Cyrillic characters in post and term slugs to Latin characters. Useful for creating human-readable URLs. Allows to use both of cyrillic and latin slugs. <br><em>The plugin is in <strong>limited maintenance</strong>, we continue to provide security and critical bug fixes, but no new features.</em>
 * Author: Themeisle
 * Author URI: https://themeisle.com
-* Version: 1.3.2
+* Version: 1.3.3
 */
 
 // Exit if accessed directly

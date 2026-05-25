@@ -1,9 +1,9 @@
 <?php return array(
     'root' => array(
         'name' => 'codeinwp/cyr-and-lat',
-        'pretty_version' => 'v1.3.2',
-        'version' => '1.3.2.0',
-        'reference' => '75f589cb60c3cb9161b7d059325e51bc16f6cfa2',
+        'pretty_version' => 'v1.3.3',
+        'version' => '1.3.3.0',
+        'reference' => 'acfe33cb3f731299c0be40b0ebb46d3c2403b7ec',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -11,9 +11,9 @@
     ),
     'versions' => array(
         'codeinwp/cyr-and-lat' => array(
-            'pretty_version' => 'v1.3.2',
-            'version' => '1.3.2.0',
-            'reference' => '75f589cb60c3cb9161b7d059325e51bc16f6cfa2',
+            'pretty_version' => 'v1.3.3',
+            'version' => '1.3.3.0',
+            'reference' => 'acfe33cb3f731299c0be40b0ebb46d3c2403b7ec',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
