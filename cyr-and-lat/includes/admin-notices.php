@@ -148,6 +148,11 @@ class WCTLR_Admin_Notices {
 	 * Check and load the sugestions notices
 	 */
 	public function load_notices_suggestions() {
+
+		if ( ! current_user_can( 'install_plugins' ) ) {
+			return;
+		}
+
 		// Check the disable nag constant
 		if ( $this->disable_nag_notices() ) {
 			return;

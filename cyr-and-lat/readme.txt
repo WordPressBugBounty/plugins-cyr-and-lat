@@ -4,7 +4,7 @@ Tags: transliteration, cyrillic, slugs, greek, georgian
 Requires at least: 4.2
 Tested up to: 7.0
 Requires PHP: 5.2
-Stable tag: 1.3.3
+Stable tag: 1.3.4
 License: GPLv2
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -98,6 +98,14 @@ Plugin security is a core priority for us. If you identify a potential vulnerabi
 Please follow the reporting protocols outlined on our [Security Page](https://themeisle.com/security/).
 
 == Changelog ==
+
+#####   Version 1.3.4 (2026-07-10)
+
+- Updated dependencies
+- Enhanced security
+
+
+
 
 #####   Version 1.3.3 (2026-05-25)
 
