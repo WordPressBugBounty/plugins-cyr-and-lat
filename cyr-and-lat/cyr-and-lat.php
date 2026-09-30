@@ -5,7 +5,7 @@
 * Description: Converts Cyrillic characters in post and term slugs to Latin characters. Useful for creating human-readable URLs. Allows to use both of cyrillic and latin slugs. <br><em>The plugin is in <strong>limited maintenance</strong>, we continue to provide security and critical bug fixes, but no new features.</em>
 * Author: Themeisle
 * Author URI: https://themeisle.com
-* Version: 1.3.5
+* Version: 1.3.6
 * WordPress Available: yes
 * Requires License: no
 */
@@ -31,6 +31,8 @@ class WCTLR_Plugin {
 	public function __construct() {
 		require_once WCTLR_PLUGIN_DIR . '/includes/functions.php';
 		require_once WCTLR_PLUGIN_DIR . '/includes/3rd-party.php';
+		require_once WCTLR_PLUGIN_DIR . '/includes/abilities.php';
+		new WCTLR_Abilities();
 
 		$this->is_ru_segment = in_array( get_locale(), array( 'ru_RU', 'bel', 'kk', 'uk', 'bg', 'bg_BG', 'ka_GE' ) );
 
@@ -41,6 +43,7 @@ class WCTLR_Plugin {
 
 		add_filter( 'themeisle_sdk_products', [ __CLASS__, 'register_sdk' ] );
 		add_filter( 'themeisle_sdk_blackfriday_data', [ $this, 'add_black_friday_data' ] );
+		add_filter( 'cyr_and_lat_ai_connect_metadata', [ $this, 'add_ai_connect_data' ] );
 	}
 
 	/**
@@ -175,6 +178,28 @@ class WCTLR_Plugin {
 		$configs[ WCTLR_PRODUCT_SLUG ] = $config;
 
 		return $configs;
+	}
+
+	/**
+	 * Opt in to the SDK module that offers the AI agent connector.
+	 *
+	 * @return array
+	 */
+	public function add_ai_connect_data() {
+		return array(
+			'name'         => 'Cyr to Lat Reloaded',
+			'notice_cases' => array(
+				__( 'preview the Latin slugs of your Cyrillic permalinks', 'cyr-to-lat-reloaded' ),
+				__( 'transliterate the slugs of your old posts', 'cyr-to-lat-reloaded' ),
+				__( 'convert your category and tag slugs to Latin', 'cyr-to-lat-reloaded' ),
+			),
+			'prompts'      => array(
+				__( 'Dry-run Cyr to Lat Reloaded on my posts and pages and show me every slug that would change.', 'cyr-to-lat-reloaded' ),
+				__( 'Transliterate my category and tag slugs to Latin.', 'cyr-to-lat-reloaded' ),
+				__( 'Transliterate the slugs of all my posts, in batches, skipping any that would collide.', 'cyr-to-lat-reloaded' ),
+			),
+			'ability_prefix'    => 'slugs',
+		);
 	}
 }
 

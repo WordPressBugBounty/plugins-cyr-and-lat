@@ -1,3 +1,8 @@
+#####   Version 1.3.6 (2026-09-30)
+
+- Updated dependencies
+- Added AI agent support: let AI assistants transliterate your slugs and change your Cyrlitera settings.
+
 #####   Version 1.3.5 (2026-07-29)
 
 - Updated dependencies

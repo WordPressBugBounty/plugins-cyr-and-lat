@@ -1,9 +1,9 @@
 <?php return array(
     'root' => array(
         'name' => 'codeinwp/cyr-and-lat',
-        'pretty_version' => 'v1.3.5',
-        'version' => '1.3.5.0',
-        'reference' => '3f0993b966fe9f9a91cddd503052175c2c9f6784',
+        'pretty_version' => 'v1.3.6',
+        'version' => '1.3.6.0',
+        'reference' => '9cec9aa30a9b5d6111d90dd8802122418b43670e',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -11,18 +11,18 @@
     ),
     'versions' => array(
         'codeinwp/cyr-and-lat' => array(
-            'pretty_version' => 'v1.3.5',
-            'version' => '1.3.5.0',
-            'reference' => '3f0993b966fe9f9a91cddd503052175c2c9f6784',
+            'pretty_version' => 'v1.3.6',
+            'version' => '1.3.6.0',
+            'reference' => '9cec9aa30a9b5d6111d90dd8802122418b43670e',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
             'dev_requirement' => false,
         ),
         'codeinwp/themeisle-sdk' => array(
-            'pretty_version' => '3.3.58',
-            'version' => '3.3.58.0',
-            'reference' => 'd6807c0b7308e323bd77cced667dee3f2d5e6a82',
+            'pretty_version' => '3.3.65',
+            'version' => '3.3.65.0',
+            'reference' => 'f650fe856d52ce4e5754557d89ba2f3127ad54d8',
             'type' => 'library',
             'install_path' => __DIR__ . '/../codeinwp/themeisle-sdk',
             'aliases' => array(),
